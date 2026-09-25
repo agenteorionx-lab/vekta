@@ -1,0 +1,10 @@
+# Arquivos temporários e scripts de build
+*.py
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Vídeo original bruto não comprimido de 40MB (o site usa o video_head_opt.mp4 de 5MB)
+Estrutura/VIDEO HEAD.mp4
