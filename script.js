@@ -5,16 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    const closeMobileMenu = () => {
+      navLinks.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isActive);
     });
 
     // Fechar ao clicar num link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+        closeMobileMenu();
       });
     });
+
+    // Fechar ao clicar ou tocar em qualquer outra área fora do menu
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('touchstart', (e) => {
+      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
   // 2. Navbar Scrolled Background
