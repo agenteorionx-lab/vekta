@@ -47,28 +47,27 @@
   </header>
 
   <main>
-    <!-- 1. HERO COM VÍDEO BACKGROUND -->
+    <!-- 1. HERO COM VÍDEO BACKGROUND & CROSS-FADE CINEMATOGRÁFICO -->
     <section class="hero-section" id="hero">
       <div class="hero-media-wrapper">
-        <video class="hero-video" autoplay loop muted playsinline preload="metadata" poster="Estrutura/HERO01.webp">
+        <video class="hero-video" id="heroVideo" autoplay loop muted playsinline preload="auto">
           <source src="Estrutura/video_head_opt.mp4" type="video/mp4">
           <source src="Estrutura/VIDEO HEAD.mp4" type="video/mp4">
-          <img src="Estrutura/HERO01.webp" alt="Estrutura da Academia em Vilhena" loading="eager">
         </video>
+        <!-- Camada 1: Imagem Poster imediata com Ken Burns & Cross-fade suave -->
+        <div class="hero-poster-layer" id="heroPosterLayer">
+          <img src="Estrutura/HERO01.webp" alt="Estrutura da Academia em Vilhena" class="hero-poster-img" fetchpriority="high">
+        </div>
         <div class="hero-overlay"></div>
       </div>
 
       <div class="container hero-content">
-        <div class="hero-badge">
-          <img src="elementos/Elemento 2 - Dourado.webp" alt="Símbolo" class="badge-icon" width="18" height="18">
-          <span>A MAIOR DE VILHENA</span>
-        </div>
         <h1 class="hero-title">Treine na maior academia de Vilhena</h1>
         <p class="hero-subtitle">2.100m² climatizados, mais de 150 equipamentos modernos e estacionamento particular.</p>
         
         <div class="hero-cta-group">
           <a href="#planos" class="btn btn-gold btn-lg">Ver planos</a>
-          <a href="https://wa.me/5569993178294?text=Gostaria%20de%20agendar%20uma%20aula%20experimental" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">Aula experimental grátis</a>
+          <a href="https://wa.me/5569993178294?text=Gostaria%20de%20agendar%20uma%20aula%20experimental" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">Aula experimental</a>
         </div>
       </div>
 
@@ -160,81 +159,135 @@
       </div>
     </section>
 
-    <!-- 4. GALERIA (carrossel) -->
+    <!-- 4. GALERIA (Carrossel Infinito em 3 Linhas - Full Width) -->
     <section class="gallery-section section-padding" id="fotos">
-      <div class="container">
-        <div class="section-header-row">
-          <div class="section-header">
-            <span class="section-tag">TOUR VIRTUAL</span>
-            <h2 class="section-title">Veja onde você vai treinar</h2>
+      <div class="container gallery-header-container">
+        <div class="section-header text-center">
+          <span class="section-tag">TOUR VIRTUAL</span>
+          <h2 class="section-title">Veja onde você vai treinar</h2>
+        </div>
+      </div>
+
+      <div class="multi-row-gallery">
+        <!-- Desktop Grid (8 fotos completas da estrutura) -->
+        <div class="gallery-desktop-grid">
+          <div class="gallery-photo-item" data-full-img="Estrutura/1 (1).webp">
+            <img src="Estrutura/1 (1).webp" alt="Sala de musculação ampla e climatizada" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
           </div>
-          <div class="gallery-controls">
-            <button class="gallery-btn prev-btn" id="galleryPrev" aria-label="Foto anterior">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="gallery-btn next-btn" id="galleryNext" aria-label="Próxima foto">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
+          <div class="gallery-photo-item" data-full-img="Estrutura/3 (3).webp">
+            <img src="Estrutura/3 (3).webp" alt="Sala de lutas com tatame profissional" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/4.webp">
+            <img src="Estrutura/4.webp" alt="Aulas coletivas e Fitdance" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/5 (1).webp">
+            <img src="Estrutura/5 (1).webp" alt="Estacionamento particular exclusivo" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/6 (1).webp">
+            <img src="Estrutura/6 (1).webp" alt="Vestiários modernos e amplos" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/7.webp">
+            <img src="Estrutura/7.webp" alt="Área de peso livre e máquinas de ponta" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/8.webp">
+            <img src="Estrutura/8.webp" alt="Área cardiovascular com esteiras e bikes" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/9.webp">
+            <img src="Estrutura/9.webp" alt="Equipamentos profissionais e ambiente moderno" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
           </div>
         </div>
 
-        <div class="carousel-container">
-          <div class="carousel-track" id="galleryTrack">
-            <!-- Item 1 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/HERO01.webp" alt="Sala de musculação ampla e climatizada da academia em Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/2.webp" alt="Equipamentos modernos de musculação em academia de Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/3 (3).webp" alt="Sala de lutas com Muay Thai e Jiu-Jitsu em Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/4.webp" alt="Aula coletiva de Fitdance na academia em Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/5 (1).webp" alt="Estacionamento particular exclusivo para alunos." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/6 (1).webp" alt="Vestiário limpo e organizado da academia em Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <!-- Extras da pasta para riqueza visual -->
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/7.webp" alt="Equipamentos de musculação e pesos livres na academia em Vilhena." loading="lazy" decoding="async" width="600" height="400">
-              </div>
-            </div>
-
-            <div class="gallery-card">
-              <div class="gallery-img-box">
-                <img src="Estrutura/8.webp" alt="Ambiente planejado e iluminação moderna para treino." loading="lazy" decoding="async" width="600" height="400">
-              </div>
+        <!-- Mobile: Uma embaixo da outra (Exatamente as 5 imagens selecionadas: 2, 5, 6, 7, 9) -->
+        <div class="gallery-mobile-stack">
+          <div class="gallery-photo-item" data-full-img="Estrutura/2.webp">
+            <img src="Estrutura/2.webp" alt="Estrutura da Academia" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
             </div>
           </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/5 (1).webp">
+            <img src="Estrutura/5 (1).webp" alt="Estacionamento particular exclusivo" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/6 (1).webp">
+            <img src="Estrutura/6 (1).webp" alt="Vestiários modernos e amplos" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/7.webp">
+            <img src="Estrutura/7.webp" alt="Área de peso livre e máquinas de ponta" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+          <div class="gallery-photo-item" data-full-img="Estrutura/9.webp">
+            <img src="Estrutura/9.webp" alt="Equipamentos profissionais e ambiente moderno" loading="lazy" decoding="async">
+            <div class="gallery-zoom-overlay">
+              <span class="gallery-zoom-icon" aria-label="Ampliar foto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL LIGHTBOX PARA VER A FOTO AMPLIADA -->
+      <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Visualização ampliada da foto">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <div class="lightbox-content">
+          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fechar visualização">&times;</button>
+          <img src="" alt="Foto ampliada da academia" class="lightbox-img" id="lightboxImg">
         </div>
       </div>
     </section>
@@ -250,50 +303,41 @@
         <div class="inclusive-grid">
           <!-- Card Musculação -->
           <div class="inclusive-card">
-            <div class="card-glow"></div>
             <div class="inclusive-header">
               <div class="inclusive-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12"/></svg>
               </div>
               <h3>Musculação livre</h3>
             </div>
-            <p class="inclusive-desc">Acesso total à área de peso e máquinas em todo o horário do seu plano.</p>
-            <div class="inclusive-badge-pill">Acesso Ilimitado</div>
+            <p class="inclusive-desc">Acesso total à ampla sala com mais de 150 máquinas modernas e peso livre em todo o horário do seu plano.</p>
           </div>
 
           <!-- Card Lutas -->
           <div class="inclusive-card highlight-card">
-            <div class="card-glow"></div>
             <div class="inclusive-header">
               <div class="inclusive-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                <!-- SVG Ícone de Luva de Boxe / Lutas -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 10.5C19 6.91 16.09 4 12.5 4C9.5 4 7 6.2 6.5 9L6 14C6 15.5 7 16.5 8.5 16.5H15.5C17.5 16.5 19 15 19 13V10.5Z"/>
+                  <path d="M6.5 9.5C6 10.2 5 11.5 5 13C5 14.5 6 15.5 7.5 15.5"/>
+                  <path d="M7 16.5V20H15V16.5"/>
+                  <line x1="7" y1="18.5" x2="15" y2="18.5"/>
+                </svg>
               </div>
               <h3>Lutas</h3>
             </div>
-            <p class="inclusive-desc">Muay Thai e Jiu-Jitsu, inclusos nos planos anuais.</p>
-            <div class="inclusive-tags">
-              <span>Muay Thai</span>
-              <span>Jiu-Jitsu</span>
-            </div>
+            <p class="inclusive-desc">Muay Thai e Jiu-Jitsu com tatame profissional e professores especializados, inclusos nos planos anuais.</p>
           </div>
 
           <!-- Card Aulas Coletivas -->
           <div class="inclusive-card">
-            <div class="card-glow"></div>
             <div class="inclusive-header">
               <div class="inclusive-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
               <h3>Aulas coletivas</h3>
             </div>
-            <p class="inclusive-desc">Funcional, Fitdance, Ritmos, Yoga e Pilates.</p>
-            <div class="inclusive-tags">
-              <span>Funcional</span>
-              <span>Fitdance</span>
-              <span>Ritmos</span>
-              <span>Yoga</span>
-              <span>Pilates</span>
-            </div>
+            <p class="inclusive-desc">Grade completa para queimar calorias e descontrair: Funcional, Fitdance, Ritmos, Yoga e Pilates.</p>
           </div>
         </div>
       </div>
@@ -458,19 +502,19 @@
       </div>
     </section>
 
-    <!-- 7. AVALIAÇÕES -->
+    <!-- 7. AVALIAÇÕES (FUNDO OFF-WHITE) -->
     <section class="reviews-section section-padding" id="avaliacoes">
       <div class="container">
         <div class="reviews-header-block">
           <div class="section-header">
-            <span class="section-tag">DEPOIMENTOS</span>
-            <h2 class="section-title">Quem treina aqui, recomenda</h2>
+            <span class="section-tag section-tag-dark">DEPOIMENTOS</span>
+            <h2 class="section-title section-title-dark">Quem treina aqui, recomenda</h2>
           </div>
           
-          <!-- Selo Google -->
-          <div class="google-badge-seal">
+          <!-- Selo Google Estilizado -->
+          <div class="google-badge-seal google-badge-seal-light">
             <div class="google-logo-svg">
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg width="26" height="26" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
                 <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
                 <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
@@ -484,37 +528,141 @@
           </div>
         </div>
 
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Melhor academia da cidade!!"</p>
-            <div class="review-author">— Professor Fernando Dias</div>
+        <!-- Carrossel com Setas Laterais e Pontinhos -->
+        <div class="reviews-slider-container">
+          <!-- Seta Lateral Esquerda -->
+          <button class="reviews-side-btn prev-btn" id="reviewsPrev" aria-label="Depoimento anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <!-- Janela do Carrossel -->
+          <div class="reviews-carousel-wrapper">
+            <div class="reviews-track" id="reviewsTrack">
+              <!-- Review 1 -->
+              <div class="review-card">
+                <div class="review-top-meta">
+                  <div class="review-avatar">
+                    <span>FD</span>
+                  </div>
+                  <div class="review-meta-text">
+                    <div class="review-author">Professor Fernando Dias</div>
+                    <div class="review-date">Avaliação no Google</div>
+                  </div>
+                  <div class="review-google-icon" title="Postado no Google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Melhor academia da cidade!!"</p>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="review-card">
+                <div class="review-top-meta">
+                  <div class="review-avatar">
+                    <span>MT</span>
+                  </div>
+                  <div class="review-meta-text">
+                    <div class="review-author">Marcos Tsukamoto</div>
+                    <div class="review-date">Avaliação no Google</div>
+                  </div>
+                  <div class="review-google-icon" title="Postado no Google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Academia ampla, organizada, limpa e com excelentes aparelhos!"</p>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="review-card">
+                <div class="review-top-meta">
+                  <div class="review-avatar">
+                    <span>JM</span>
+                  </div>
+                  <div class="review-meta-text">
+                    <div class="review-author">Jean Magalhães</div>
+                    <div class="review-date">Avaliação no Google</div>
+                  </div>
+                  <div class="review-google-icon" title="Postado no Google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Academia gigante, equipamentos novos e preços acessíveis demais."</p>
+              </div>
+
+              <!-- Review 4 -->
+              <div class="review-card">
+                <div class="review-top-meta">
+                  <div class="review-avatar">
+                    <span>DC</span>
+                  </div>
+                  <div class="review-meta-text">
+                    <div class="review-author">Dara Cassol</div>
+                    <div class="review-date">Avaliação no Google</div>
+                  </div>
+                  <div class="review-google-icon" title="Postado no Google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Academia excelente, bem limpa e organizada. Diversidade de aulas coletivas."</p>
+              </div>
+
+              <!-- Review 5 -->
+              <div class="review-card">
+                <div class="review-top-meta">
+                  <div class="review-avatar">
+                    <span>GF</span>
+                  </div>
+                  <div class="review-meta-text">
+                    <div class="review-author">Gabriel Fonseca</div>
+                    <div class="review-date">Avaliação no Google</div>
+                  </div>
+                  <div class="review-google-icon" title="Postado no Google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Espaço para crianças, bem organizado e limpo, equipamentos bem cuidados."</p>
+              </div>
+            </div>
           </div>
 
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Academia ampla, organizada, limpa e com excelentes aparelhos!"</p>
-            <div class="review-author">— Marcos Tsukamoto</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Academia gigante, equipamentos novos e preços acessíveis demais."</p>
-            <div class="review-author">— Jean Magalhães</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Academia excelente, bem limpa e organizada. Diversidade de aulas coletivas."</p>
-            <div class="review-author">— Dara Cassol</div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Espaço para crianças, bem organizado e limpo, equipamentos bem cuidados."</p>
-            <div class="review-author">— Gabriel Fonseca</div>
-          </div>
+          <!-- Seta Lateral Direita -->
+          <button class="reviews-side-btn next-btn" id="reviewsNext" aria-label="Próximo depoimento">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
+
+        <!-- Indicadores em Pontinhos (Dots) -->
+        <div class="reviews-dots" id="reviewsDots" aria-label="Navegação por depoimento"></div>
       </div>
     </section>
 
@@ -583,13 +731,12 @@
       </div>
     </section>
 
-    <!-- 10. CTA FINAL -->
+    <!-- 10. CTA FINAL (FUNDO BRANCO, TEXTOS DOURADOS, BOTÃO CINZA) -->
     <section class="cta-final-section">
-      <div class="cta-overlay-pattern"></div>
       <div class="container text-center cta-final-content">
         <h2 class="cta-title">Bora começar seu treino?</h2>
         <p class="cta-text">Chama a gente no WhatsApp. A gente tira suas dúvidas e te explica direitinho qual plano combina com a sua rotina.</p>
-        <a href="https://wa.me/5569993178294?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20academia" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-xl">Falar no WhatsApp</a>
+        <a href="https://wa.me/5569993178294?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20academia" target="_blank" rel="noopener noreferrer" class="btn btn-gray btn-xl">Falar no WhatsApp</a>
       </div>
     </section>
 
@@ -693,7 +840,14 @@
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>© 2026 Academia em Vilhena, RO. Todos os direitos reservados.</p>
+        <div class="footer-legal-wrap">
+          <p>© 2026 Academia em Vilhena, RO. Todos os direitos reservados.</p>
+          <div class="footer-legal-links">
+            <button type="button" class="legal-link-btn" id="openTermsBtn">Termos de Uso</button>
+            <span class="legal-divider">•</span>
+            <button type="button" class="legal-link-btn" id="openPrivacyBtn">Políticas de Privacidade</button>
+          </div>
+        </div>
         <div class="developer-credit">
           <span>Desenvolvido por</span>
           <a href="https://orionxbrasil.com/" target="_blank" rel="noopener noreferrer" class="orionx-btn" aria-label="Desenvolvido por OrionX">
@@ -703,6 +857,64 @@
       </div>
     </div>
   </footer>
+
+  <!-- MODAL: TERMOS DE USO -->
+  <div class="modal-overlay" id="termsModal" aria-hidden="true" role="dialog" aria-labelledby="termsTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="termsTitle">Termos de Uso</h3>
+        <button type="button" class="modal-close" data-close-modal="termsModal" aria-label="Fechar modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Aceitação dos Termos</h4>
+        <p>Ao acessar e utilizar esta página ou usufruir dos serviços da Academia em Vilhena, você concorda expressamente em cumprir e estar vinculado a estes Termos de Uso e a todas as leis e regulamentos aplicáveis.</p>
+        
+        <h4>2. Aulas Experimentais e Serviços</h4>
+        <p>A aula experimental gratuita está sujeita à disponibilidade de vagas, agendamento prévio com confirmação da nossa equipe e preenchimento de questionário de prontidão física (PAR-Q). A academia reserva-se o direito de reorganizar horários ou grades de aulas coletivas conforme as necessidades operacionais.</p>
+
+        <h4>3. Conduta e Normas Internas</h4>
+        <p>Para garantir a segurança e o conforto de todos, é obrigatório o uso de vestimenta e calçados adequados para treino, guardar anilhas e halteres após o uso e higienizar os aparelhos utilizados com os produtos disponibilizados no salão.</p>
+
+        <h4>4. Planos, Cobrança e Cancelamento</h4>
+        <p>As condições de pagamento, taxas de matrícula (quando houver) e prazos de cancelamento sem multa seguem as especificações acordadas na contratação de cada plano individual, universitário, duo ou trio.</p>
+
+        <h4>5. Propriedade Intelectual</h4>
+        <p>Todo o conteúdo, marcas, logotipos, imagens, vídeos e textos contidos neste site pertencem à Academia em Vilhena ou são utilizados sob licença expressa, sendo vedada a reprodução sem autorização prévia.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gold btn-sm" data-close-modal="termsModal">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: POLÍTICAS DE PRIVACIDADE -->
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="privacyTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="privacyTitle">Políticas de Privacidade (LGPD)</h3>
+        <button type="button" class="modal-close" data-close-modal="privacyModal" aria-label="Fechar modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Coleta de Informações</h4>
+        <p>Coletamos apenas as informações estritamente necessárias para o atendimento e fornecimento dos serviços, tais como nome, telefone celular (WhatsApp) e preferências de treino enviadas espontaneamente pelo usuário.</p>
+        
+        <h4>2. Finalidade do Tratamento</h4>
+        <p>Os dados fornecidos são utilizados para: (a) agendamento de aulas experimentais; (b) esclarecimento de dúvidas sobre planos e mensalidades; (c) envio de novidades e promoções, desde que autorizado pelo usuário; (d) aprimoramento da experiência em nossa página.</p>
+
+        <h4>3. Proteção e Sigilo de Dados</h4>
+        <p>Tratamos seus dados pessoais em total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD). Adotamos rigorosas medidas de segurança física e digital para prevenir acessos não autorizados e jamais vendemos ou compartilhamos seus dados com terceiros com fins comerciais.</p>
+
+        <h4>4. Cookies e Tecnologias de Navegação</h4>
+        <p>Podemos utilizar cookies anônimos de navegação ou ferramentas de análise para aferir métricas de desempenho e velocidade do site, sem identificação direta do visitante.</p>
+
+        <h4>5. Direitos do Titular</h4>
+        <p>Você pode solicitar a qualquer momento a confirmação, correção, atualização ou exclusão definitiva de seus dados de nossa base de contatos entrando em contato direto com nosso canal de atendimento via WhatsApp.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gold btn-sm" data-close-modal="privacyModal">Entendido</button>
+      </div>
+    </div>
+  </div>
 
   <!-- BOTÃO FLUTUANTE WHATSAPP -->
   <a href="https://wa.me/5569993178294?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20academia" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
