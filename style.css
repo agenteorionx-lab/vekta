@@ -2301,6 +2301,11 @@ h1, h2, h3, h4 {
     margin-bottom: 24px !important;
   }
 
+  .plans-section .section-title {
+    font-size: clamp(1.9rem, 7.8vw, 2.7rem) !important;
+    line-height: 1.05 !important;
+  }
+
   .plans-section .section-desc {
     margin-bottom: 20px !important;
   }
