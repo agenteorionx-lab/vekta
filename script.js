@@ -321,4 +321,26 @@ document.addEventListener('DOMContentLoaded', () => {
       closeLightbox();
     }
   });
+  // 7. SCROLL REVEAL — Animações de entrada via IntersectionObserver
+  const revealElements = document.querySelectorAll('[data-reveal]');
+
+  if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Deixa de observar para não reverter a animação
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,        // Dispara quando 12% do elemento está visível
+      rootMargin: '0px 0px -40px 0px' // Margem inferior para antecipação
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    // Fallback: dispositivos sem suporte — exibe tudo imediatamente
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
 });

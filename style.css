@@ -60,6 +60,66 @@ body {
 }
 
 /* ==========================================================================
+   SCROLL REVEAL — Sistema de animações de entrada
+   Elementos com [data-reveal] ficam invisíveis até entrar na viewport.
+   O JS adiciona .is-visible via IntersectionObserver.
+   ========================================================================== */
+
+/* Respeita preferência do sistema por menos movimento */
+@media (prefers-reduced-motion: no-preference) {
+
+  [data-reveal] {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Fade de baixo para cima — padrão */
+  [data-reveal="fade-up"] {
+    transform: translateY(48px);
+  }
+
+  /* Fade da esquerda */
+  [data-reveal="fade-left"] {
+    transform: translateX(-48px);
+  }
+
+  /* Fade da direita */
+  [data-reveal="fade-right"] {
+    transform: translateX(48px);
+  }
+
+  /* Zoom suave — para cards de destaque */
+  [data-reveal="zoom"] {
+    transform: scale(0.93) translateY(24px);
+  }
+
+  /* Fade simples sem deslocamento */
+  [data-reveal="fade"] {
+    transform: none;
+  }
+
+  /* Estado visível — aplicado pelo JS */
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  /* Delays em cascata para listas de cards */
+  [data-delay="100"] { transition-delay: 0.10s; }
+  [data-delay="150"] { transition-delay: 0.15s; }
+  [data-delay="200"] { transition-delay: 0.20s; }
+  [data-delay="300"] { transition-delay: 0.30s; }
+  [data-delay="400"] { transition-delay: 0.40s; }
+  [data-delay="500"] { transition-delay: 0.50s; }
+  [data-delay="600"] { transition-delay: 0.60s; }
+  [data-delay="700"] { transition-delay: 0.70s; }
+  [data-delay="800"] { transition-delay: 0.80s; }
+
+}
+
+/* ==========================================================================
    LAYOUT & CONTAINER
    ========================================================================== */
 .container {
